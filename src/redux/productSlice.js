@@ -10,7 +10,7 @@ const initialState = {
 
 export const createProduct = createAsyncThunk("createproduct", async (body) => {
     try {
-        const res = await fetch("http://localhost:8000/api/post/create", {
+        const res = await fetch("https://shopping-backend-cmc7.onrender.com/api/post/create", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -24,7 +24,7 @@ export const createProduct = createAsyncThunk("createproduct", async (body) => {
 })
 export const fetchingSinglePost = createAsyncThunk("fetchingsinglepost", async ({ id }) => {
     try {
-        const res = await fetch(`http://localhost:8000/api/post/single/${id}`, {
+        const res = await fetch(`https://shopping-backend-cmc7.onrender.com/api/post/single/${id}`, {
             method: "get"
         })
         return await res.json()

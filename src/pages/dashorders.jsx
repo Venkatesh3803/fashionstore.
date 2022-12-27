@@ -12,7 +12,7 @@ const Dashorders = () => {
     const [order, setOrder] = useState([])
     useEffect(() => {
         const fetchingOrders = async () => {
-            const res = await axios.get(`http://localhost:8000/api/order/orders/${user._id}`)
+            const res = await axios.get(`https://shopping-backend-cmc7.onrender.com/api/order/orders/${user._id}`)
             setOrder(res.data)
         }
         fetchingOrders()

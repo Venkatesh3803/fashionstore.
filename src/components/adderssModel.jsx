@@ -42,7 +42,7 @@ const AdderssModel = ({ setCod, cartData, cartTotal }) => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try {
-            const res = await axios.post("http://localhost:8000/api/order/create", {
+            const res = await axios.post("https://shopping-backend-cmc7.onrender.com/api/order/create", {
                 userId: user._id,
                 orderId: orderId,
                 address: {

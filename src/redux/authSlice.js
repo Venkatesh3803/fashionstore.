@@ -10,7 +10,7 @@ const initialState = {
 
 export const registerUser = createAsyncThunk("registeruser", async (body) => {
     try {
-        const res = await fetch("http://localhost:8000/api/auth/register", {
+        const res = await fetch("https://shopping-backend-cmc7.onrender.com/api/auth/register", {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
@@ -25,7 +25,7 @@ export const registerUser = createAsyncThunk("registeruser", async (body) => {
 
 export const loginUser = createAsyncThunk("loginuser", async (body) => {
     try {
-        const res = await fetch("http://localhost:8000/api/auth/login", {
+        const res = await fetch("https://shopping-backend-cmc7.onrender.com/api/auth/login", {
             method: "put",
             headers: {
                 "Content-Type": "application/json"

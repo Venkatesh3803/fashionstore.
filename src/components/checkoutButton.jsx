@@ -5,7 +5,7 @@ import { useSelector } from "react-redux"
 const CheckoutButton = ({ cartData }) => {
     const user = useSelector((state) => state.user.user)
     const handleCheckOut = async () => {
-        await axios.post("http://localhost:8000/api/checkout/payment", {
+        await axios.post("https://shopping-backend-cmc7.onrender.com/api/checkout/payment", {
             cartData,
             userId: user._id
         }).then((res) => {
