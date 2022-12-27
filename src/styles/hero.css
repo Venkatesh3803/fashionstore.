@@ -1,0 +1,7 @@
+.hero {
+    height: calc(100vh - 80px);
+    background-color: antiquewhite;
+    width: 300vw;
+    display: flex;
+    transition: 0.5s ease;
+}

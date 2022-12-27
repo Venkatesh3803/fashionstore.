@@ -1,23 +1,55 @@
-import logo from './logo.svg';
-import './App.css';
+import Homepage from "./pages/homepage";
+import { Navigate, Route, Routes } from "react-router-dom";
+import Login from "./pages/login";
+import Register from "./pages/register";
+import SingleProduct from "./pages/singleproduct";
+import Products from "./pages/products";
+import Product from "./pages/product";
+import Dashboard from "./pages/dashboard";
+import Checkout from "./pages/checkout";
+import Pagenotfound from "./pages/pagenotfound";
+import MyOrders from "./pages/myOrders";
+import Dashproducts from "./pages/dashproducts";
+import Dashorders from "./pages/dashorders";
+import Dashusers from "./pages/dashusers";
+import Sucesspage from "./pages/sucesspage";
+import ProfilePage from "./pages/profilepage";
+import { useSelector } from "react-redux";
+import AddproductModel from "./pages/addProduct";
+import Aboutus from "./pages/aboutus";
+
 
 function App() {
+
+  const user = useSelector((state) => state.user.user)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="application">
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route path="/singleproduct/:id" element={<SingleProduct />} />
+        <Route path="/products/:category" element={<Products />} />
+        <Route path="/product/:gender" element={<Product />} />
+        <Route path="/login" element={user ? <Navigate to={"/"} /> : <Login />} />
+        <Route path="/register" element={user ? <Login /> : <Register />} />
+        <Route path="/checkout" element={user ? <Checkout /> : <Login />} />
+        <Route path="/myorders/:id" element={user ? <MyOrders /> : <Navigate to={"/"} />} />
+        {user.isAdmin &&
+          <>
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/dashproducts" element={<Dashproducts />} />
+            <Route path="/dashorders" element={<Dashorders />} />
+            <Route path="/dashusers" element={<Dashusers />} />
+            <Route path="/addproduct" element={<AddproductModel />} />
+          </>
+        }
+
+        <Route path="/sucess" element={<Sucesspage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/aboutus" element={<Aboutus />} />
+        <Route path="*" element={<Pagenotfound />} />
+      </Routes>
+
     </div>
   );
 }

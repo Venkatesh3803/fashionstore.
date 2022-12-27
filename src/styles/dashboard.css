@@ -1,0 +1,29 @@
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 110vh;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 165vh;
+    object-fit: cover;
+    opacity: 0.8;
+}
+
+.homebg {
+    background: rgb(194,242,242);
+    background: -moz-radial-gradient(circle, rgba(194,242,242,0.5945728633250176) 12%, rgba(244,225,204,1) 49%);
+    background: -webkit-radial-gradient(circle, rgba(194,242,242,0.5945728633250176) 12%, rgba(244,225,204,1) 49%);
+    background: radial-gradient(circle, rgba(194,242,242,0.5945728633250176) 12%, rgba(244,225,204,1) 49%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#c2f2f2",endColorstr="#f4e1cc",GradientType=1);
+}
