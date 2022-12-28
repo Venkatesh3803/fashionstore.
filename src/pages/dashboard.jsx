@@ -16,7 +16,7 @@ const Dashboard = () => {
     const [productData, setProductData] = useState([])
     useEffect(() => {
         const fetchingProducts = async () => {
-            const res = await axios.get("https://shopping-backend-cmc7.onrender.com/api/post/admin")
+            const res = await axios.get("https://fashionstorebackend.onrender.com/api/post/admin")
             setProductData(res.data)
         }
         fetchingProducts()

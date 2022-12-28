@@ -7,9 +7,9 @@ const ProductList = ({ cat, gender, Featured, Trending }) => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const res = cat ? await axios.get(`https://shopping-backend-cmc7.onrender.com/api/post?category=${cat}`) :
-                gender ? await axios.get(`https://shopping-backend-cmc7.onrender.com/api/post?gender=${gender}`)
-                    : await axios.get(`https://shopping-backend-cmc7.onrender.com/api/post`)
+            const res = cat ? await axios.get(`https://fashionstorebackend.onrender.com/api/post?category=${cat}`) :
+                gender ? await axios.get(`https://fashionstorebackend.onrender.com/api/post?gender=${gender}`)
+                    : await axios.get(`https://fashionstorebackend.onrender.com/api/post`)
             setProducts(res.data)
         }
         fetchData()
