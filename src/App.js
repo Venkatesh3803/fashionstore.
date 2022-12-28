@@ -34,7 +34,7 @@ function App() {
         <Route path="/register" element={user ? <Login /> : <Register />} />
         <Route path="/checkout" element={user ? <Checkout /> : <Login />} />
         <Route path="/myorders/:id" element={user ? <MyOrders /> : <Navigate to={"/"} />} />
-        {user.isAdmin &&
+        {user &&
           <>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/dashproducts" element={<Dashproducts />} />
@@ -43,7 +43,6 @@ function App() {
             <Route path="/addproduct" element={<AddproductModel />} />
           </>
         }
-
         <Route path="/sucess" element={<Sucesspage />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/aboutus" element={<Aboutus />} />

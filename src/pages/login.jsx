@@ -7,7 +7,7 @@ import { loginUser } from '../redux/authSlice';
 import Annocement from '../components/annocement';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const user = useSelector((state) => state.user.user)
@@ -37,17 +37,15 @@ const Login = () => {
         <Navigate to={"/"} />
     }
 
-
     return (
         <>
             <Annocement />
             <Navber />
-
             <div className="flex justify-center items-center lg:h-screen">
                 <div className="flex flex-col justify-center items-center md:flex-row shadow rounded-xl max-w-5xl w-[90%] h-[670px] md:h-[460px] m-2">
                     <div className="h-[90%] w-full md:w-3/4">
                         <div className="text-xl cursor-pointer flex flex-col justify-center items-center mt-5 md:mt-0">
-                            <h1 className="font-semibold text-gray-600">DAILY BLOGS</h1>
+                            <h1 className="font-semibold text-gray-600"> LOGIN</h1>
                         </div>
                         <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center mt-10 md:mt-14 space-y-6 md:space-y-8">
                             <div className="">
@@ -94,8 +92,8 @@ const Login = () => {
 
                     </div>
                 </div>
+               
             </div>
-
 
         </>
     )

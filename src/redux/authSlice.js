@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { toast } from "react-toastify"
 
 const initialState = {
     user: localStorage.getItem("user") ? JSON.parse(localStorage.getItem("user")) : "",
@@ -52,6 +53,9 @@ export const authSlice = createSlice({
             localStorage.clear()
             state.user = ""
             state.token = ""
+            toast.success("Logout Sucess",{
+                position: 'bottom-left'
+            })
         }
     },
     extraReducers: {
@@ -61,8 +65,16 @@ export const authSlice = createSlice({
         },
         [registerUser.fulfilled]: (state, action) => {
             state.isLoading = false
-            state.user = action.payload
-
+            state.message = action.payload.message
+            if (action.payload.message === "Registered Sucessfully") {
+                toast.success(action.payload.message,{
+                    position:'bottom-center'
+                })
+            } else {
+                toast.error(action.payload.message,{
+                    position:'bottom-center'
+                })
+            }
         },
         [registerUser.rejected]: (state, action) => {
             state.error = true
@@ -75,6 +87,16 @@ export const authSlice = createSlice({
             state.isLoading = false
             state.user = action.payload.others
             state.token = action.payload.token
+            state.message = action.payload.message
+            if (action.payload.message === "Login Sucessfull") {
+                toast.success(action.payload.message,{
+                    position:'bottom-center'
+                })
+            } else {
+                toast.error(action.payload.message,{
+                    position:'bottom-center'
+                })
+            }
             if (action.payload.others) {
                 localStorage.setItem("user", JSON.stringify(action.payload.others))
                 localStorage.setItem("token", (action.payload.token))

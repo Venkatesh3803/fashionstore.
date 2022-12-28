@@ -7,7 +7,9 @@ import Annocement from '../components/annocement';
 import { registerUser } from '../redux/authSlice';
 import { useDispatch } from "react-redux"
 
+
 const Register = () => {
+
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -42,7 +44,7 @@ const Register = () => {
             <div>
                 <div className="flex my-14 md:my-5 justify-center items-center h-screen">
                     <div className="flex flex-col justify-center items-center md:flex-row shadow rounded-xl max-w-5xl w-[90%] m-2">
-                    <div className="h-[90%] w-full md:w-3/4">
+                        <div className="h-[90%] w-full md:w-3/4">
                             <div className="text-xl cursor-pointer flex flex-col justify-center items-center mt-5 md:mt-0">
                                 <h1 className="font-semibold text-gray-600">DAILY BLOGS</h1>
                             </div>
@@ -52,7 +54,7 @@ const Register = () => {
                                         className=" bg-gray-100 rounded-lg px-5 py-2 focus:border border-blue-600 focus:outline-none text-black placeholder:text-gray-600 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px]" />
                                 </div>
                                 <div className="">
-                                    <input type="text" placeholder="User Name" name='username' required  onChange={handleChange} value={username}
+                                    <input type="text" placeholder="User Name" name='username' required onChange={handleChange} value={username}
                                         className=" bg-gray-100 rounded-lg px-5 py-2 focus:border border-blue-600 focus:outline-none text-black placeholder:text-gray-600 placeholder:opacity-50 font-semibold md:w-72 lg:w-[340px]" />
                                 </div>
                                 <div className="">
@@ -85,12 +87,10 @@ const Register = () => {
                                     <h3 className="underline underline-offset-4 tracking-wide hover:text-blue-400">Log In </h3>
                                 </Link>
                             </div>
-
                         </div>
-                        
                     </div>
+                    
                 </div>
-
             </div>
         </>
     )

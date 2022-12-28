@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
+import { toast } from "react-toastify"
 
 const initialState = {
     product: [],
@@ -40,7 +41,7 @@ export const deleteProduct = createAsyncThunk("deletingproduct", async ({ id }) 
         })
         return res
     } catch (error) {
-
+        console.log(error)
     }
 })
 
@@ -61,6 +62,7 @@ export const productSlice = createSlice({
         [createProduct.fulfilled]: (state, action) => {
             state.isLoading = false
             state.product = action.payload
+            toast.success("Product Uploaded Sucessfully")
         },
         [createProduct.rejected]: (state, action) => {
             state.error = true
