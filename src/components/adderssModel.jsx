@@ -9,7 +9,6 @@ const AdderssModel = ({ setCod, cartData, cartTotal }) => {
     const user = useSelector((state) => state.user.user)
     const dispatch = useDispatch()
     const navigate = useNavigate();
-    const [order, setOrder] = useState("")
     const [fullname, setFullname] = useState("")
     const [email, setEmail] = useState("")
     const [phone, setPhone] = useState("")
@@ -58,9 +57,11 @@ const AdderssModel = ({ setCod, cartData, cartTotal }) => {
                 products: cartData,
                 totalAmount: cartTotal
             })
-            setOrder(res.data)
+            await res.data
             dispatch(clearCart());
-            navigate('/sucess')
+            if (res.data) {
+                navigate('/sucess')
+            }
 
         } catch (error) {
             console.log(error)
@@ -77,11 +78,11 @@ const AdderssModel = ({ setCod, cartData, cartTotal }) => {
                 </label>
             </div>
             <label className='w-full'> email:-
-                <input onChange={handleChange}  required value={email} name="email" className="px-2 py-1 bg-transparent border border-gray-600 rounded-lg placeholder:text-sm  w-full" type="email" placeholder='email' />
+                <input onChange={handleChange} required value={email} name="email" className="px-2 py-1 bg-transparent border border-gray-600 rounded-lg placeholder:text-sm  w-full" type="email" placeholder='email' />
             </label>
             <div className=" flex gap-5">
                 <label className='w-full'>Phone Number :-
-                    <input onChange={handleChange} value={phone} required minLength={10}  name="phone" className="px-2 py-1 bg-transparent border border-gray-600 rounded-lg placeholder:text-sm  w-full" type="text" placeholder='Phone Number' />
+                    <input onChange={handleChange} value={phone} required minLength={10} name="phone" className="px-2 py-1 bg-transparent border border-gray-600 rounded-lg placeholder:text-sm  w-full" type="text" placeholder='Phone Number' />
                 </label>
                 <label className='w-full'>City:-
                     <input onChange={handleChange} value={city} required name="city" className="px-2 py-1 bg-transparent border border-gray-600 rounded-lg placeholder:text-sm  w-full" type="text" placeholder='City' />
