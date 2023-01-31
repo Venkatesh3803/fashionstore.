@@ -3,6 +3,9 @@ import "../styles/hero.css"
 import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 import { useState } from 'react';
 import { Link } from "react-router-dom"
+import hero1 from "../images/hero1.jpg"
+import hero2 from "../images/hero2.jpg"
+import hero3 from "../images/hero3.jpg"
 
 const Hero = () => {
     const [slide, setSlide] = useState("")
@@ -10,15 +13,15 @@ const Hero = () => {
     const Slider = [
         {
             id: 1,
-            image: "https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80",
-            title: "BEST SEASON SALE HOODIES",
+            image: hero3,
+            title: "BEST SEASON SALE MENS",
             offer: "upto 30 Off%",
             button: "SHOP NOW",
-            cat : "hoodies"
+            cat : "men"
         },
         {
             id: 2,
-            image: "https://images.pexels.com/photos/720606/pexels-photo-720606.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+            image: hero2,
             title: "BEST SEASON SALE HOODIES",
             offer: "upto 40 Off%",
             button: "SHOP NOW",
@@ -26,7 +29,7 @@ const Hero = () => {
         },
         {
             id: 3,
-            image: "https://images.unsplash.com/photo-1511700581478-6e648e5e262d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80",
+            image: hero1,
             title: "BEST SUMMER SALE ",
             offer: "upto 35 Off%",
             button: "SHOP NOW",

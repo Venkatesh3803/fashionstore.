@@ -62,8 +62,10 @@ const MyOrders = () => {
                                         </div>
                                     </div>
                                     <div className="lg:flex gap-4">
-                                        <button className='border px-4 border-gray-500 rounded-lg shadow-md hover:bg-purple-200'>View Order</button>
-                                        <button className='border px-4 border-gray-500 rounded-lg shadow-lg hover:bg-purple-200'>Track Order</button>
+                                        <Link to={`../orders/${item._id}`}>
+                                            <button className='border px-4 py-4 border-gray-500 rounded-lg shadow-md hover:bg-purple-200'>View Order</button>
+                                        </Link>
+                                        <button className='border px-4 py-4 border-gray-500 rounded-lg shadow-lg hover:bg-purple-200'>Track Order</button>
                                     </div>
                                 </div>
                                 {/* cart products */}
@@ -89,7 +91,9 @@ const MyOrders = () => {
                                                     <span className='text-gray-700 font-serif text-xs lg:text-base '>Product Deliverd by 28th oct</span>
                                                 </div>
                                                 <div className="lg:flex gap-5">
-                                                    <button className='text-purple-600 border text-xs lg:text-base lg:border-none'>View product</button>
+                                                    <Link to={`../../singleproduct/${i.postData._id}`}>
+                                                        <button className='text-purple-600 border text-xs lg:text-base lg:border-none'>View product</button>
+                                                    </Link>
                                                     <div className="border-l border-gray-500"></div>
                                                     <button className='text-purple-600 border text-xs lg:text-base lg:border-none'>Buy again</button>
                                                 </div>

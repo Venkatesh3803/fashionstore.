@@ -17,6 +17,7 @@ import ProfilePage from "./pages/profilepage";
 import { useSelector } from "react-redux";
 import AddproductModel from "./pages/addProduct";
 import Aboutus from "./pages/aboutus";
+import Orders from "./pages/orders";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <Route path="/register" element={user ? <Login /> : <Register />} />
         <Route path="/checkout" element={user ? <Checkout /> : <Login />} />
         <Route path="/myorders/:id" element={user ? <MyOrders /> : <Navigate to={"/"} />} />
+        <Route path="/orders/:id" element={user ? <Orders /> : <Navigate to={"/"} />} />
         {user &&
           <>
             <Route path="/dashboard" element={<Dashboard />} />

@@ -18,6 +18,7 @@ const AdderssModel = ({ setCod, cartData, cartTotal }) => {
     const [district, setDistrict] = useState("")
     const [deliveryAddress, setDeliveryAddress] = useState("")
 
+    console.log(cartData)
     const handleChange = (e) => {
         if (e.target.name === "fullname") {
             setFullname(e.target.value)
@@ -37,6 +38,7 @@ const AdderssModel = ({ setCod, cartData, cartTotal }) => {
             setDistrict(e.target.value)
         }
     }
+
     let orderId = Math.random()
     const handleSubmit = async (e) => {
         e.preventDefault()
