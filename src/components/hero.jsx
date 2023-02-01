@@ -14,7 +14,7 @@ const Hero = () => {
         {
             id: 1,
             image: hero3,
-            title: "BEST SEASON SALE MENS",
+            title: "Find It All. Shop Online Today",
             offer: "upto 30 Off%",
             button: "SHOP NOW",
             cat : "men"
@@ -22,7 +22,7 @@ const Hero = () => {
         {
             id: 2,
             image: hero2,
-            title: "BEST SEASON SALE HOODIES",
+            title: "Discover New Possibilities. Shop Now",
             offer: "upto 40 Off%",
             button: "SHOP NOW",
             cat : "shirt"
@@ -30,7 +30,7 @@ const Hero = () => {
         {
             id: 3,
             image: hero1,
-            title: "BEST SUMMER SALE ",
+            title: "Get More for Less - Shop Now and Save Big!",
             offer: "upto 35 Off%",
             button: "SHOP NOW",
             cat : "shoes"
