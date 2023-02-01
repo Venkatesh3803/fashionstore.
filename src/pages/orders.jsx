@@ -10,7 +10,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
         const fetchingOrders = async () => {
-            const res = await axios.get(`http://localhost:8000/api/order/single/${id}`)
+            const res = await axios.get(`https://fashionstorebackend.onrender.com/api/order/single/${id}`)
             setOrders(res.data)
         }
         fetchingOrders()
