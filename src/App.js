@@ -18,6 +18,7 @@ import { useSelector } from "react-redux";
 import AddproductModel from "./pages/addProduct";
 import Aboutus from "./pages/aboutus";
 import Orders from "./pages/orders";
+import DashProductEdit from "./pages/dashProductEdit";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
             <Route path="/dashorders" element={<Dashorders />} />
             <Route path="/dashusers" element={<Dashusers />} />
             <Route path="/addproduct" element={<AddproductModel />} />
+            <Route path="/dashproductedit/:id" element={<DashProductEdit />} />
           </>
         }
         <Route path="/sucess" element={<Sucesspage />} />

@@ -11,20 +11,21 @@ import Dashboardleft from '../components/dashboardleft'
 
 const Dashproducts = () => {
     const [productData, setProductData] = useState([])
- 
+
     useEffect(() => {
-        const fetchingProducts = async() => {
+        const fetchingProducts = async () => {
             const res = await axios.get("https://fashionstorebackend.onrender.com/api/post/admin")
             setProductData(res.data)
         }
         fetchingProducts()
-    },[])
+    }, [])
+
     return (
         <div>
             <Annocement />
             <Navber />
             <div className="lg:h-[86vh] relative">
-            <img className='image' src="https://img.freepik.com/free-vector/peach-bubble-patterned-background_53876-90684.jpg?t=st=1671771486~exp=1671772086~hmac=5df3b34dae78dceee7bb95e81a884e6722c8102564772d01a981d3119a23ce79" alt="" />
+                <img className='image' src="https://img.freepik.com/free-vector/peach-bubble-patterned-background_53876-90684.jpg?t=st=1671771486~exp=1671772086~hmac=5df3b34dae78dceee7bb95e81a884e6722c8102564772d01a981d3119a23ce79" alt="" />
                 <div className="dash w-[96%] m-auto  h-[96%] rounded-xl lg:flex reletive">
                     <Dashboardleft />
                     <div className="p-5 overflow-y-scroll " style={{ flex: "4" }}>
@@ -64,8 +65,10 @@ const Dashproducts = () => {
                                                     <td className='lg:px-4 lg:py-3 px-2 py-1'>{item.quantity}</td>
                                                     <td className='lg:px-4 lg:py-3 px-2 py-1'>{item.size} / {item.color}  </td>
                                                     <td className='lg:px-4 lg:py-3 px-2 py-1 '><button className='px-3 py-1'>{item.price} </button></td>
-                                                    <td className='lg:px-4 lg:py-3 px-2 py-1'><button className='px-2 py-1 bg-green-300 rounded-md text-gray-white hover:bg-green-400 '> edit</button></td>
-                                                    <td className='lg:px-4 lg:py-3 px-2 py-1'><button  className='px-2 py-1 bg-red-400 rounded-md text-gray-white hover:bg-red-500 '> delete</button></td>
+                                                    <Link to={`../dashproductedit/${item._id}`}>
+                                                        <td className='lg:px-4 lg:py-3 px-2 py-1 self-center'><button className='px-2 py-1 bg-green-300 rounded-md text-gray-white hover:bg-green-400 '> edit</button></td>
+                                                    </Link>
+                                                    <td className='lg:px-4 lg:py-3 px-2 py-1'><button className='px-2 py-1 bg-red-300 rounded-md text-gray-white hover:bg-red-400'> Delete</button></td>
                                                 </tr>
                                             </tbody>
                                         )
