@@ -17,9 +17,9 @@ const Homepage = () => {
                 <Annocement />
                 <Navber />
                 <Hero />
-                <Feature Featured = "Featured"/>
+                <Feature Featured ="Featured"/>
                 <Category />
-                <Trending Trending = "Trending"/>
+                <Trending Trending ="Trending"/>
                 <Banner />
                 <Incentives />
                 <Footer />
