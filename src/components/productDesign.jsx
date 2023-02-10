@@ -85,7 +85,7 @@ console.log(size)
                         <span className='md:text-lg font-semibold'>Sizes:-</span>
                         {productData.size && productData.size.map((s) => {
                             return (
-                                <span onClick={() => setSize(s)} className= {size === s ? 'border-2 border-gray-500 rounded-lg md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer bg-gray-400' : 'border border-gray-500 rounded-sm md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer'}>{s}
+                                <span onClick={() => setSize(s)} className= {size === s ? 'border-2 border-gray-500 rounded-lg md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer bg-gray-400  ml-1' : 'border border-gray-500 rounded-sm md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer ml-1'}>{s}
                                 </span>
                             )
                         })

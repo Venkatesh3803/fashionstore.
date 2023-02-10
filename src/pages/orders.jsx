@@ -18,16 +18,15 @@ const Orders = () => {
     return (
         <>
             <Navber />
-            <div className="flex w-[90%] mx-12 my-10 max-h-[89vh] overflow-hidden bg-white ">
-                <div style={{ flex: "1.5" }}>
+            <div className="flex w-[90%] lg:mx-12 mx-2 lg:my-10 my-4 max-h-[89vh] overflow-hidden bg-white ">
+                <div style={{ flex: "1.5" }} className ="hidden lg:block">
                     <img className='object-cover rounded-lg w-[100%] h-[100%]' src={ordersPic} alt="" />
                 </div>
-                <div style={{ flex: "2.5" }} className="mx-14 mt-10 overflow-scroll">
-
+                <div style={{ flex: "2.5" }} className="lg:mx-14 mx-2 lg:mt-10 mt-2 overflow-scroll">
                     <div className="flex flex-col gap-6">
                         <span className=' text-lg text-blue-500'>payment sucessfull</span>
                         <div className="">
-                            <h2 className='text-5xl font-semibold'>Thanks for ordering</h2>
+                            <h2 className='lg:text-5xl text-3xl font-semibold'>Thanks for ordering</h2>
                             <span className='text-gray-500 text-m '>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis autem architecto <br /> mollitia laudantium enim fuga.</span>
                         </div>
                         <div className="">

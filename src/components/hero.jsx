@@ -47,13 +47,13 @@ const Hero = () => {
 
     return (
         <div className='overflow-hidden'>
-            <div className='hero relative h-[75vh] md:h-[89vh]' style={{ transform: `translateX(-${slide * 100}vw)`, zIndex: "1" }} >
+            <div className='hero relative h-[89vh] md:h-[89vh]' style={{ transform: `translateX(-${slide * 100}vw)`, zIndex: "1" }} >
                 {Slider.map((item) => {
                     return (
                         <>
                             <div className="w-full relative" key={item.id}>
                                 <img className='w-full h-full object-cover ' src={item.image} alt="" />
-                                <div className="absolute md:top-48 md:left-20 left-12 top-32 flex flex-col gap-3 md:gap-5">
+                                <div className="absolute md:top-48 md:left-20 left-12 top-32 flex flex-col gap-5 md:gap-5">
                                     <span className='text-2xl font-serif text-white md:text-5xl'>{item.title}</span>
                                     <span className='text-xl text-red-500 md:text-4xl '>{item.offer}</span>
                                     <Link to={`../products/${item.cat}`}>

@@ -24,37 +24,8 @@ const Navber = () => {
     return (
         <div className='bg-rose-200 p-5 flex justify-between h-20 sticky top-0 left-0 z-50 items-center'>
             <AiOutlineMenu onClick={() => setResponsive(!responsive)} className='text-5xl lg:hidden ' />
-            {responsive &&
-                <div className="bg-gray-100 h-[100vh] absolute top-20 left-0 lg:hidden md:w-1/3 w-1/2 px-4">
-                    <Link to={"/"}>
-                        <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
-                            <li >Home</li>
-                        </ul>
-                    </Link>
-                    <Link to={"../product/men"}>
-                        <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
-                            <li >Mens</li>
-                        </ul>
-                    </Link>
-                    <Link to={"../product/women"}>
-                        <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
-                            <li >Womens</li>
-                        </ul>
-                    </Link>
-                    <Link to={"../products/accessories"}>
-                        <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
-                            <li >Accessories</li>
-                        </ul>
-                    </Link>
-                    <Link to={"../aboutus"}>
-                        <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
-                            <li >About Us</li>
-                        </ul>
-                    </Link>
-                </div>
-
-            }
-            <div className="lg:flex gap-1 items-center w-[100%] hidden">
+            
+            <div className={responsive ? "bg-gray-100 h-[100vh] absolute top-20 left-0 lg:hidden md:w-1/3 w-1/2 px-4" : "lg:flex gap-1 items-center w-[100%] hidden"}>
                 <Link to={"/"}>
                     <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
                         <li >Home</li>
@@ -71,9 +42,9 @@ const Navber = () => {
                     </ul>
                 </Link>
                 <Link to={"../products/accessories"}>
-                <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
-                    <li >Accessories</li>
-                </ul>
+                    <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
+                        <li >Accessories</li>
+                    </ul>
                 </Link>
                 <Link to={"../aboutus"}>
                     <ul className='px-2 py-1 cursor-pointer text-gray-700 font-medium text-lg hover:text-gray-500 transition-all'>
@@ -125,7 +96,7 @@ const Navber = () => {
             }
             {cart &&
                 <>
-                    <div className="bg-purple-100 w-4/5 overflow-y-scroll items-end fixed top-20 right-3 rounded-xl p-5 max-h-screen z-20 md:w-2/5 " style={{ zIndex: "2" }}>
+                    <div className="bg-purple-100 w-4/5 overflow-y-scroll items-end fixed top-20 right-3 rounded-xl p-5 max-h-screen z-20 md:w-2/4 " style={{ zIndex: "2" }}>
                         <span onClick={() => setCart(false)} className='absolute top-2 w-8 h-8 bg-black text-white rounded-full flex justify-center items-center text-xl font-semibold cursor-pointer right-4 hover:bg-gray-700 transition-all'>x</span>
                         {cartData && cartData.length === 0 && <span className='text-lg text-gray-600 font-semibold'>OUR CART IS EMPTY</span>}
                         {cartData && cartData.map((c) => {
