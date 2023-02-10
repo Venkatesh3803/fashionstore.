@@ -6,6 +6,7 @@ import Footer from '../components/footer'
 import Navber from '../components/navber'
 import { useSelector } from 'react-redux'
 import axios from "axios"
+import {toast} from "react-toastify"
 
 const Dashorders = () => {
     const user = useSelector((state) => state.user.user)
@@ -17,13 +18,39 @@ const Dashorders = () => {
         }
         fetchingOrders()
     }, [user._id])
-    console.log(order)
+
+    const handleCancle = async (id) => {
+        alert("You want to Delete Order",)
+        try {
+            const response = await axios.delete(`https://fashionstorebackend.onrender.com/api/order/${id}`, {
+                currentUserIsAdmin: user._id
+            })
+            await response.data
+            toast.success(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+    const handleUpdate = async (id) => {
+        alert("You want to Delete Order",)
+        try {
+            const response = await axios.put(`https://fashionstorebackend.onrender.com/api/order/${id}`, {
+                currentUserIsAdmin: user._id
+            })
+            await response.data
+            toast.success(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
     return (
         <div className='backgroundgradient'>
             <Annocement />
             <Navber />
             <div className="lg:h-[86vh] relative">
-              
+
                 <div className="dash w-[96%] m-auto  h-[96%] rounded-xl lg:flex ">
                     <Dashboardleft />
                     <div className="lg:p-5 p-2 overflow-scroll" style={{ flex: "4" }}>
@@ -51,8 +78,8 @@ const Dashorders = () => {
                                                         </div>
                                                     </div>
                                                     <div className="md:flex gap-4">
-                                                        <button className='border px-4 border-gray-500 rounded-lg shadow-md hover:bg-purple-200'>Accept Order</button>
-                                                        <button className='border px-4 border-gray-500 rounded-lg shadow-lg hover:bg-purple-200'>Delete Order</button>
+                                                        <button onClick={() => handleUpdate(item._id)} className='border px-4 border-gray-500 rounded-lg shadow-md hover:bg-purple-200'>Accept Order</button>
+                                                        <button onClick={() => handleCancle(item.id)} className='border px-4 border-gray-500 rounded-lg shadow-lg hover:bg-purple-200'>Delete Order</button>
                                                     </div>
                                                 </div>
                                                 {/* cart products */}

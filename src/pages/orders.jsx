@@ -4,8 +4,11 @@ import axios from "axios"
 import { useState, useEffect } from "react"
 import { useParams } from "react-router-dom"
 import ordersPic from "../images/order.avif"
+import { useSelector } from "react-redux"
+import { toast } from "react-toastify"
 
 const Orders = () => {
+    const user = useSelector((state) => state.user.user)
     const { id } = useParams()
     const [orders, setOrders] = useState([])
     useEffect(() => {
@@ -15,11 +18,27 @@ const Orders = () => {
         }
         fetchingOrders()
     }, [id])
+
+
+    const handleCancle = async () => {
+        alert("You want to Delete Order",)
+        try {
+            const response = await axios.delete(`https://fashionstorebackend.onrender.com/api/order/${id}`, {
+                currentUserId: user._id
+            })
+            await response.data
+            toast.success(response.data)
+        } catch (error) {
+            console.log(error)
+        }
+
+    }
+
     return (
         <>
             <Navber />
             <div className="flex w-[90%] lg:mx-12 mx-2 lg:my-10 my-4 max-h-[89vh] overflow-hidden bg-white ">
-                <div style={{ flex: "1.5" }} className ="hidden lg:block">
+                <div style={{ flex: "1.5" }} className="hidden lg:block">
                     <img className='object-cover rounded-lg w-[100%] h-[100%]' src={ordersPic} alt="" />
                 </div>
                 <div style={{ flex: "2.5" }} className="lg:mx-14 mx-2 lg:mt-10 mt-2 overflow-scroll">
@@ -46,7 +65,7 @@ const Orders = () => {
                                             </div>
                                         </div>
                                         <div className=" flex flex-col">
-                                            <button className="text-white bg-red-600 px-5 py-1 rounded-md hover:bg-red-500">Cancel</button>
+                                            <button onClick={handleCancle} className="text-white bg-red-600 px-5 py-1 rounded-md hover:bg-red-500">Cancel</button>
                                             <span className='m-5 text-xl'>₹{p.postData.price}</span>
                                         </div>
                                     </div>
@@ -75,11 +94,11 @@ const Orders = () => {
                         <div className="">
                             <span className="text-lg font-semibold">Address</span>
                             <div className="">
-                               <p>Name :- {orders.address?.fullname}</p> 
-                               <p>email :- {orders.address?.email}</p> 
-                               <p>Address :- {orders.address?.deliveryAddress}</p> 
-                               <p>State :- {orders.address?.state}</p> 
-                               <p>Phone :- {orders.address?.phone}</p> 
+                                <p>Name :- {orders.address?.fullname}</p>
+                                <p>email :- {orders.address?.email}</p>
+                                <p>Address :- {orders.address?.deliveryAddress}</p>
+                                <p>State :- {orders.address?.state}</p>
+                                <p>Phone :- {orders.address?.phone}</p>
                             </div>
 
                         </div>
