@@ -13,7 +13,7 @@ const Hero = () => {
     const Slider = [
         {
             id: 1,
-            image: hero3,
+            image: hero2,
             title: "Find It All. Shop Online Today",
             offer: "upto 30 Off%",
             button: "SHOP NOW",
@@ -21,7 +21,7 @@ const Hero = () => {
         },
         {
             id: 2,
-            image: hero2,
+            image: hero3,
             title: "Discover New Possibilities. Shop Now",
             offer: "upto 40 Off%",
             button: "SHOP NOW",

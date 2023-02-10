@@ -65,10 +65,10 @@ const AddproductModel = () => {
 
     return (
         <>
-            <div>
+            <div className='backgroundgradient'>
                 <Annocement />
                 <Navber />
-                <img className='image' src="https://img.freepik.com/free-vector/peach-bubble-patterned-background_53876-90684.jpg?t=st=1671771486~exp=1671772086~hmac=5df3b34dae78dceee7bb95e81a884e6722c8102564772d01a981d3119a23ce79" alt="" />
+               
                 <div className=" ">
                     <div className="dash w-[96%] m-auto mt-4 h-[96%] rounded-xl lg:flex">
                         <Dashboardleft />

@@ -10,13 +10,13 @@ import ProductList from '../components/productList'
 const Products = () => {
     const location = useLocation()
     const cat = location.pathname.split("/")[2]
-    const [filter, setFilter] = useState("")
+    // const [filter, setFilter] = useState("")
 
     return (
-        <div className='relative'>
+        <div className='relative backgroundgradient'>
             <Annocement />
             <Navber />
-            <img className='img' src="https://img.freepik.com/free-vector/fluid-pastel-background_53876-93216.jpg?w=1060&t=st=1671781697~exp=1671782297~hmac=30c025ee4e72a6ce79615379203857f66eae27df0d0cb550ee74f85b15017e75" alt="" />
+           
             <div className="lg:flex relative">
                 <div className="flex lg:flex-col lg:gap-3 lg:mt-20 px-10 w-full" style={{ flex: "1" }}>
                     <div className="hidden lg:block">

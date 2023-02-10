@@ -18,8 +18,7 @@ const SingleProduct = () => {
     }, [dispatch, id])
 
     return (
-        <div>
-            <img className='img' src="https://img.freepik.com/free-vector/fluid-pastel-background_53876-93216.jpg?w=1060&t=st=1671781697~exp=1671782297~hmac=30c025ee4e72a6ce79615379203857f66eae27df0d0cb550ee74f85b15017e75" alt="" />
+        <div className='backgroundgradient'>
             <Navber />
             <ProductDesign productData={productData} />
             <Banner />

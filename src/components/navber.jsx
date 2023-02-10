@@ -125,7 +125,7 @@ const Navber = () => {
             }
             {cart &&
                 <>
-                    <div className="bg-purple-100 w-4/5 overflow-y-scroll items-end fixed top-20 right-3 rounded-xl p-5 max-h-screen z-20 md:w-1/4 " style={{ zIndex: "2" }}>
+                    <div className="bg-purple-100 w-4/5 overflow-y-scroll items-end fixed top-20 right-3 rounded-xl p-5 max-h-screen z-20 md:w-2/5 " style={{ zIndex: "2" }}>
                         <span onClick={() => setCart(false)} className='absolute top-2 w-8 h-8 bg-black text-white rounded-full flex justify-center items-center text-xl font-semibold cursor-pointer right-4 hover:bg-gray-700 transition-all'>x</span>
                         {cartData && cartData.length === 0 && <span className='text-lg text-gray-600 font-semibold'>OUR CART IS EMPTY</span>}
                         {cartData && cartData.map((c) => {

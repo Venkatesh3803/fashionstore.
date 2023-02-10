@@ -46,7 +46,7 @@ const Register = () => {
                     <div className="flex flex-col justify-center items-center md:flex-row shadow rounded-xl max-w-5xl w-[90%] m-2">
                         <div className="h-[90%] w-full md:w-3/4">
                             <div className="text-xl cursor-pointer flex flex-col justify-center items-center mt-5 md:mt-0">
-                                <h1 className="font-semibold text-gray-600">DAILY BLOGS</h1>
+                                <h1 className="font-semibold text-gray-600">Register</h1>
                             </div>
                             <form onSubmit={handleSubmit} className="flex flex-col justify-center items-center mt-10 md:mt-14 space-y-6 md:space-y-8">
                                 <div className="">
@@ -67,8 +67,13 @@ const Register = () => {
                                         className="uppercase px-24 md:px-[118px] lg:px-[140px] py-2 rounded-md text-white bg-blue-500 hover:bg-blue-600  font-medium ">Sign Up</button>
                                 </div>
                             </form>
+                            <div className="text-center my-6">
+                            <Link to={"/login"}>
+                                <p className="text-sm font-medium text-gray-400 hover:text-blue-500 hover:underline"> Already have Account? LogIn</p>
+                            </Link>
                         </div>
-                        <div className="h-[100%] w-full md:w-2/4  bg-center  bg-cover rounded-lg relative">
+                        </div>
+                        <div className="h-[100%] w-full md:w-2/4  bg-center  bg-cover rounded-lg relative hidden md:block">
                             <img className='w-full h-full p-4 object-cover relative' src={"https://images.pexels.com/photos/2737004/pexels-photo-2737004.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"} alt="" />
                             <div className="flex gap-5 p-5 text-4xl mx-auto absolute top-32 left-20 ">
                                 <p >

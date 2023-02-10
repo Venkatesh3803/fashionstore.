@@ -19,11 +19,11 @@ const Dashorders = () => {
     }, [user._id])
     console.log(order)
     return (
-        <div>
+        <div className='backgroundgradient'>
             <Annocement />
             <Navber />
             <div className="lg:h-[86vh] relative">
-                <img className='image' src="https://img.freepik.com/free-vector/peach-bubble-patterned-background_53876-90684.jpg?t=st=1671771486~exp=1671772086~hmac=5df3b34dae78dceee7bb95e81a884e6722c8102564772d01a981d3119a23ce79" alt="" />
+              
                 <div className="dash w-[96%] m-auto  h-[96%] rounded-xl lg:flex ">
                     <Dashboardleft />
                     <div className="lg:p-5 p-2 overflow-scroll" style={{ flex: "4" }}>

@@ -66,11 +66,12 @@ const Login = () => {
                             </div>
                         </form>
                         <div className="text-center my-6">
-                            <p className="text-sm font-medium text-gray-400 hover:text-blue-500 hover:underline">Forgot
-                                Password ?</p>
+                            <Link to={"/register"}>
+                                <p className="text-sm font-medium text-gray-400 hover:text-blue-500 hover:underline"> Don't have Account? SignIn</p>
+                            </Link>
                         </div>
                     </div>
-                    <div className="h-[100%] w-full md:w-2/4  bg-center  bg-cover rounded-lg relative">
+                    <div className="h-[100%] w-full md:w-2/4  bg-center  bg-cover rounded-lg relative hidden md:block">
                         <img className='w-full h-full object-cover p-4 relative' src={"https://images.pexels.com/photos/13077981/pexels-photo-13077981.jpeg"} alt="" />
                         <div className="flex gap-5 p-5 text-4xl mx-auto absolute top-32 left-20 ">
                             <p>
@@ -92,7 +93,7 @@ const Login = () => {
 
                     </div>
                 </div>
-               
+
             </div>
 
         </>

@@ -9,6 +9,7 @@ const ProductDesign = ({ productData }) => {
     const dispatch = useDispatch()
     let postData = productData;
     const [size, setSize] = useState(postData.size && postData.size[0])
+
     const handleQty = (qty) => {
         if (qty === "des") {
             if (quantity === 1) {
@@ -19,6 +20,8 @@ const ProductDesign = ({ productData }) => {
             setQuantity((prev) => prev + 1)
         }
     }
+console.log(size)
+
     return (
         <div className='lg:flex m-4 gap-3'>
             <div className="flex-1 md:flex gap-3">
@@ -80,11 +83,10 @@ const ProductDesign = ({ productData }) => {
                     </div>
                     <div className="flex gap-2 items-center">
                         <span className='md:text-lg font-semibold'>Sizes:-</span>
-                        {productData.size && productData.size.map((s, index) => {
+                        {productData.size && productData.size.map((s) => {
                             return (
-                                <span onClick={() => setSize(index)} className='border border-gray-500 rounded-sm md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer'>{s}
+                                <span onClick={() => setSize(s)} className= {size === s ? 'border-2 border-gray-500 rounded-lg md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer bg-gray-400' : 'border border-gray-500 rounded-sm md:px-3 py-1 px-2 text-sm md:text-base cursor-pointer'}>{s}
                                 </span>
-
                             )
                         })
                         }

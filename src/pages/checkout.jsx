@@ -13,11 +13,11 @@ const Checkout = () => {
   const cartTotal = useSelector((state) => state.cart.cartItemsTotal)
   const [cod, setCod] = useState(false)
   return (
-    <div>
+    <div className='backgroundgradient'>
       <Annocement />
       <Navber />
       <>
-      <img className='img' src="https://img.freepik.com/free-vector/fluid-pastel-background_53876-93216.jpg?w=1060&t=st=1671781697~exp=1671782297~hmac=30c025ee4e72a6ce79615379203857f66eae27df0d0cb550ee74f85b15017e75" alt="" />
+  
         <div className="lg:flex md:mx-10 mx-2 relative my-5 dash lg:h-[87vh]">
           <div className='lg:p-20 md:p-10 p-4' style={{ flex: "2.5" }}>
             {cartData.length === 0 &&
